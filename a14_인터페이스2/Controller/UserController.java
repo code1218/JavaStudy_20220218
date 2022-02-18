@@ -16,7 +16,7 @@ public class UserController {
 		
 		Scanner scanner = new Scanner(System.in);
 		View mainView = new MainView();
-		UserService userService = new UserServiceImpl();
+		UserService userService = new UserServiceImpl(scanner);
 		
 		userService.setUsers(users);
 		

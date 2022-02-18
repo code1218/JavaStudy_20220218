@@ -23,10 +23,23 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public void createUser() {
-		System.out.print("사용자 이름(아이디) >>> ");
-		System.out.print("비밀번호 >>> ");
-		System.out.print("이름 >>> ");
-		System.out.print("이메일 >>> ");
+		for(int i = 0; i < users.length; i++) {
+			if(users[i] == null) {
+				User user = new User();
+				System.out.print("사용자 이름(아이디) >>> ");
+				user.setUsername(scanner.nextLine());
+				System.out.print("비밀번호 >>> ");
+				user.setPassword(scanner.nextLine());
+				System.out.print("이름 >>> ");
+				user.setName(scanner.nextLine());
+				System.out.print("이메일 >>> ");
+				user.setEmail(scanner.nextLine());
+				
+				users[i] = user;
+				return;
+			}
+		}
+		System.out.println("더이상 회원가입을 할 수 없습니다.");
 	}
 
 	@Override
